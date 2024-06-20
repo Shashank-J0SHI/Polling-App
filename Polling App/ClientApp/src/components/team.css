@@ -1,0 +1,97 @@
+.team
+{
+    position: relative;
+    height: 7.5rem;
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0 5px;
+    border-bottom: 1px #0b0200af solid;
+    display: flex;
+    align-items: center
+}
+
+#img
+{
+    position: relative;
+    height: 4rem;
+    width: 4rem;
+    background-color: #0b0200;
+    border-radius: 0.5rem;
+    outline: 1.5px solid #0b0200;
+    outline-offset: 2px;
+}
+
+.team div
+{
+    position: relative;
+    height: 4rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    padding-left: 1rem;
+}
+
+.team div h3
+{
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.team div p
+{
+    position: relative;
+    margin-bottom: auto
+}
+
+input[type=checkbox]
+{
+    display: none;
+}
+
+#heart
+{
+    position: absolute;
+    right: 0;
+    height: 2.8rem;
+    width: 2.8rem;
+    transform: translateY(-50%);
+    top: 50%;
+    padding: 0.7rem 0.7rem;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    background-image: url(../resources/heart.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    overflow: visible;
+}
+
+.team div input[type=checkbox]:checked + #heart
+{
+    animation: buzz 0.1s linear;
+    animation-iteration-count: 3;
+    background-image: url(../resources/heartchecked.svg);
+}
+
+@keyframes buzz {
+    0%
+    {
+        background-position: center center;
+    }
+
+    25%
+    {
+        background-position: 55% center;
+    }
+
+    75%
+    {
+        background-position: 38% center;
+    }
+
+    100%
+    {
+        background-position: center center;
+    }
+}

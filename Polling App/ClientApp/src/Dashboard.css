@@ -1,0 +1,27 @@
+*
+{
+  font-family: "armata";
+}
+
+#animteam
+{
+    animation: slidein 0.4s forwards ease-out;
+}
+
+#firstbox::after
+{
+    position: absolute;
+    display: none;
+    content: url(./resources/heartchecked.svg);
+}
+
+@keyframes slidein {
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(0%);
+    }
+}

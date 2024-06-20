@@ -1,0 +1,188 @@
+
+
+@font-face {
+    font-family: "font1";
+    src: url(./Fonts/Armata.otf);
+}
+
+#dash
+{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px;
+    padding-top: 1.5rem;
+    height: 100%;
+    overflow-y: scroll;
+    width: 100%;
+    background-color: rgb(43, 43, 50);
+}
+
+#dash h1
+{
+    color: white;
+    width: 100%;
+    font-weight: 300;
+    text-align: center;
+    font-size: 6vw;
+}
+
+h2
+{
+    color: white;
+    width: 80%;
+    text-align: center;
+    font-size: 5.5vw;
+    font-weight: 300;
+}
+
+#container
+{
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    margin-top: 2rem;
+    padding: 0 5px
+}
+
+#time_info
+{
+    position: relative;
+    width: 50%;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+}
+
+#time_info p{
+    position: relative;
+    bottom: 0;
+    font-weight: 300;
+    color: white;
+    font-size: 7.5vw;
+}
+
+#time_info p span
+{
+    font-size: 15vw;
+    text-align: left;
+    font-weight: 600;
+}
+
+#running span{
+    color: rgb(28, 197, 28);
+}
+
+#stopped span{
+    color: white;
+}
+
+#team_select
+{
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+#poll_turnout
+{
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    height: fit-content;
+    width: 100%;
+    border-radius: 1rem;
+    margin: 2rem 0;
+    grid-gap: 10px;
+}
+
+#poll_turnout p
+{
+    padding-top: 9vw;
+    font-size: 4vw;
+    text-align: center;
+    aspect-ratio: 1;
+    background-color: rgb(66, 66, 72);
+    border-radius: 5px;
+    color: #e1e1e1
+}
+
+#poll_turnout p span
+{
+    font-size: 10vw;
+    font-weight: 500;
+    color: white
+}
+
+#button_container
+{
+    width: 50%;
+    aspect-ratio: 1;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+input[type=checkbox]
+{
+    display: none;
+}
+
+#button_container p
+{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #b8b8b8;
+    z-index: 1;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+#push
+{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background-color: rgb(43, 43, 50);
+    background-image: url(./resources/powerred.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 45%;
+    border: 2px red solid;
+    outline: 1px red solid;
+    outline-offset: 2px;
+    transition: transform 0.1s;
+}
+
+input[type=checkbox]:checked + div + #button_container #push
+{
+    background-image: url(./resources/powergreen.svg);
+    border-color: rgb(28, 197, 28);
+    outline-color: rgb(28, 197, 28);
+    transform: scale(0.95);
+}
+
+input[type=checkbox] + div #running
+{
+    display: none;
+}
+
+input[type=checkbox]:checked + div #running
+{
+    display: block;
+}
+
+input[type=checkbox]:checked + div #stopped
+{
+    display: none;
+}
+
+input[type=checkbox] + div + #button_container #push:active
+{
+    transform: scale(0.9);
+}

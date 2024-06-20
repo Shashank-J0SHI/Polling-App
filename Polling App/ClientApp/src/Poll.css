@@ -1,0 +1,241 @@
+
+@font-face {
+    font-family: "font1";
+    src: url(./Fonts/Armata.otf);
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color-scheme: only light;
+}
+body
+{
+    width: 100%;
+    height: 100vh;
+    height: 100lvh;
+    background-color:#efefef;
+    overflow: hidden;
+}
+
+.timer 
+{
+    width: 250px;
+    height: 250px;
+    background-color: #efefef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    color: #2e2e2e;
+    font-size: 8rem;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    border-radius: 50%;
+    box-shadow:  10px 10px 20px #bfbfbf,
+                    -10px -10px 20px #ffffff;
+
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+#actualTimer
+{
+    box-shadow: none;
+    z-index: 2;
+}
+
+#water
+{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    transform: translateY(100%);
+}
+
+.wave
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url(./resources/wave.png);
+    background-size: 1000px 100px;
+}
+
+#wave1
+{
+    z-index: 1000;
+    opacity: 1;
+    bottom: 0;
+    animation: animatewave 3s linear infinite;
+}
+
+#wave2
+{
+    z-index: 999;
+    opacity: 0.5;
+    bottom: 10px;
+    animation: animatewave 3s linear infinite;
+}
+
+#wave3
+{
+    z-index: 1000;
+    opacity: 0.2;
+    bottom: 15px;
+    animation: animatewave 2s linear infinite;
+}
+
+#wave4
+{
+    z-index: 999;
+    opacity: 0.7;
+    bottom: 20px;
+    animation: animatewave_2 2s linear infinite;
+}
+
+#depth
+{
+    position: absolute;
+    top: 100px;
+    height: calc(100% - 100px);
+    width: 100%;
+    background-color: #ff6c6c;
+}
+
+@keyframes animatewave 
+{
+    0%
+    {
+        background-position-x: 1000px;
+
+    }
+    100%
+    {
+        background-position-x: 0px;
+    }
+}
+@keyframes animatewave_2
+{
+    0%
+    {
+        background-position-x: 0px;
+
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+
+.hd
+{
+    width: calc(100% - 40px);
+    height: 80px;
+    position: absolute;
+    top: 0;
+    margin: 0 20px;
+    z-index: 0;
+    padding: 0 1rem;
+    background-color: #efefef;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    box-shadow:  10px 10px 20px #bfbfbf,
+            -10px -10px 20px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#actualHd
+{
+    box-shadow: none;
+    z-index: 2;
+}
+
+.hd h2
+{
+    font-family: 'font1';
+    font-size: 1.8rem;
+    color: #b3b3b3;
+}
+
+.mj
+{
+    width: calc(100% - 40px);
+    height: 80px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 0;
+    background-color: #efefef;
+    box-shadow:  10px 10px 30px #bfbfbf,
+                    -10px -10px 30px #ffffff;
+    border-radius: 20px;
+    padding: 5px 5px;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#actualMj
+{
+    box-shadow: none;
+    z-index: 2;
+}
+
+.mj span
+{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#ig
+{
+    height: 100%;
+    background-image: url(./resources/avatar2.png);
+}
+
+#i1
+{
+    height: 100%;
+    background-image: url(./resources/emoji1.png);
+}
+
+#i2
+{
+    height: 90%;
+    background-image: url(./resources/emoji2.png);
+}
+
+#i3
+{
+    height: 80%;
+    background-image: url(./resources/emoji3.png);
+}
+
+#i4
+{
+    height: 80%;
+    background-image: url(./resources/emoji4.png);
+}
+
+#i1, #i2, #i3, #i4, #ig
+{
+    aspect-ratio: 1;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+}

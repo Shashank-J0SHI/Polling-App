@@ -1,0 +1,23 @@
+.nav_button div
+{
+    height: 55%;
+    aspect-ratio: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#home_button div
+{
+    background-image: url('../resources/home_selected.svg');
+}
+
+#poll_button div
+{
+    background-image: url('../resources/power.svg');
+}
+
+#home_button input[type=checkbox]:checked + div
+{
+    background-image: url('../resources/home.svg');
+}
