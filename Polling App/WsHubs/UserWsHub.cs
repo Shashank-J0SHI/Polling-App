@@ -24,7 +24,9 @@ namespace Polling_App.WsHubs
 
         public static int[] a;
         public static uint[] option_arr = { 0, 0, 0, 0 };
+        
         public static ConcurrentBag<string> adminIds = ["0"];
+        public static ConcurrentBag<string> clientIds = ["0"];
         public static ConcurrentDictionary<string, List<string>> aDict = new ConcurrentDictionary<string, List<string>>(StringComparer.OrdinalIgnoreCase);
 
         private static void ClockStart()
@@ -113,19 +115,9 @@ namespace Polling_App.WsHubs
         public async Task Admin_Connected()
         {
             string local = Context.ConnectionId;
-            bool localBool = true;
             var tempvar = Groups.AddToGroupAsync(local, "admins");
 
-            foreach (string item in adminIds)
-            {
-                if (local == item)
-                {
-                    localBool = false;
-                    break;
-                }
-            }
-
-            if (localBool)
+            if (!adminIds.Contains(local))
             {
                 adminIds.Add(local);
                 Interlocked.Increment(ref adminCount);
@@ -162,7 +154,7 @@ namespace Polling_App.WsHubs
 
         public async Task User_Love(string userkey, string teamid, bool state)
         {
-            if (valid(userkey))
+            if (clientIds.Contains(userkey))
             {
                 aDict.TryAdd(userkey, []);
                 bool local = aDict[userkey].Contains(teamid);
@@ -213,14 +205,12 @@ namespace Polling_App.WsHubs
         {
             string local = Context.ConnectionId;
             Interlocked.Decrement(ref connCount);
-            foreach(string item in adminIds)
+            
+            if (adminIds.Contains(local))
             {
-                if (local == item)
-                {
-                    Interlocked.Decrement(ref adminCount);
-                    break;
-                }
+                Interlocked.Decrement(ref adminCount);
             }
+
             change = true;
             return base.OnDisconnectedAsync(exception);
         }
