@@ -4,7 +4,7 @@ A full stack solution to real time voting over a network. Created with ReactJS a
 ## How to run:
 1. Simply run IIS server from Visual Studio.
 
-![alt text]([https://github.com/Shashank-J0SHI/Polling-App/blob/master/Screenshots/user_dashboard.jpg])
+![alt text](https://github.com/Shashank-J0SHI/Polling-App/blob/master/Screenshots/user_dashboard.jpg)
 
 ## Requirements:
 1. .NET v8.0
