@@ -7,8 +7,7 @@ A full stack solution to real time voting over a network. Created with ReactJS a
 ![alt text](http://url/to/img.png)
 
 ## Requirements:
-1. .NET v0.8
-2. 
-3. sklearn
-4. pandas
-5. numpy
+1. .NET v8.0
+2. SignalR nuget package
+3. React v18.3.1
+4. SQL server
